@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Huck's Print Shop — custom parts, engineer-reviewed</title>
+    <meta
+      name="description"
+      content="Send a photo, sketch, broken part or CAD file. A mechanical engineer reviews it, then we print it, measure it and ship it. A Dyhedral company."
+    />
+    <meta property="og:title" content="Huck's Print Shop" />
+    <meta
+      property="og:description"
+      content="The part nobody has time to design. Engineer-reviewed 3D-printed parts."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hucksprintshop.com/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e2620'/%3E%3Cpath d='M9 5v20h18' fill='none' stroke='%23e9f0ec' stroke-width='3'/%3E%3Ccircle cx='9' cy='11' r='2.6' fill='%239fc21c'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Spline+Sans+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="design-system/tokens.css" />
+    <style>
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+        gap: var(--s-7);
+        align-items: end;
+        padding: var(--s-8) 0;
+      }
+      .hero h1 {
+        margin: var(--s-4) 0 var(--s-5);
+      }
+      .hero .t-lede {
+        margin: 0 0 var(--s-6);
+      }
+      .hero svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      section {
+        padding: var(--s-8) 0;
+      }
+      .ledger-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: var(--s-4);
+      }
+      .t-ledger p {
+        color: var(--text-2);
+        font-size: var(--size-2);
+      }
+      .contact a.big {
+        display: inline-block;
+        margin-top: var(--s-5);
+        color: var(--text);
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(24px, 5vw, 56px);
+        letter-spacing: -0.04em;
+        text-decoration-color: var(--signal);
+        text-decoration-thickness: 6px;
+        text-underline-offset: 8px;
+        overflow-wrap: anywhere;
+      }
+      .contact .t-note {
+        margin-top: var(--s-6);
+      }
+      .t-footer a {
+        color: var(--text-2);
+      }
+      @media (max-width: 820px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+          padding: var(--s-7) 0;
+        }
+        .hero figure {
+          max-width: 340px;
+        }
+        section {
+          padding: var(--s-7) 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="t-page">
+      <header class="t-nav">
+        <a class="t-wordmark" href="#top">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path
+              d="M8 4v22h20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.6"
+            />
+            <circle
+              cx="8"
+              cy="11"
+              r="3"
+              fill="var(--signal)"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+          </svg>
+          huck's print shop
+        </a>
+        <a class="t-label" href="#contact">Contact →</a>
+      </header>
+
+      <main id="top">
+        <div class="hero">
+          <div>
+            <div class="t-label">Custom parts / Los Gatos, California</div>
+            <h1>
+              The part nobody has <span class="t-mark">time to design.</span>
+            </h1>
+            <p class="t-lede">
+              Send a photo, sketch, broken part or CAD file. A mechanical
+              engineer reviews it, then we print it, measure it and ship it.
+            </p>
+            <a
+              class="t-btn"
+              href="mailto:hello@hucksprintshop.com?subject=A%20part"
+              >Email us a photo</a
+            >
+          </div>
+          <figure class="t-figure" style="margin: 0">
+            <svg
+              viewBox="0 0 360 300"
+              role="img"
+              aria-label="Line drawing of an L-shaped bracket with two holes, dimensioned 40.0 by 36.0 millimetres, with one hole called out as 5.2 millimetres plus or minus 0.2"
+            >
+              <g
+                fill="none"
+                stroke="var(--text)"
+                stroke-width="2"
+                stroke-linejoin="round"
+              >
+                <path d="M90 40h34v164h170v34H90z" />
+              </g>
+              <circle
+                cx="107"
+                cy="88"
+                r="9"
+                fill="var(--signal)"
+                stroke="var(--text)"
+                stroke-width="2"
+              />
+              <circle
+                cx="250"
+                cy="221"
+                r="9"
+                fill="none"
+                stroke="var(--text)"
+                stroke-width="2"
+              />
+              <g stroke="var(--text-2)" stroke-width="1" fill="none">
+                <path d="M90 250v26M294 250v26M90 268h204" />
+                <path d="M78 40h-26M78 238h-26M60 40v198" />
+                <path d="M116 80l52-34h40" />
+              </g>
+              <g
+                font-family="Spline Sans Mono, monospace"
+                font-size="12"
+                fill="var(--text-2)"
+              >
+                <text x="192" y="290" text-anchor="middle">40.0</text>
+                <text
+                  x="44"
+                  y="144"
+                  text-anchor="middle"
+                  transform="rotate(-90 44 144)"
+                >
+                  36.0
+                </text>
+                <text x="172" y="40">Ø 5.2 ±0.2</text>
+              </g>
+            </svg>
+            <figcaption>
+              FIG. 1 / CRITICAL DIMENSIONS, MEASURED BEFORE IT SHIPS
+            </figcaption>
+          </figure>
+        </div>
+
+        <section style="padding-top: 0">
+          <div class="ledger-head">
+            <div class="t-label">How it works</div>
+            <div class="t-label">04 steps</div>
+          </div>
+          <div class="t-ledger">
+            <div>
+              <span class="t-label">01</span>
+              <h3>Send it</h3>
+              <p>
+                Photos with a ruler in frame, a sketch, measurements, STL or
+                STEP.
+              </p>
+            </div>
+            <div>
+              <span class="t-label">02</span>
+              <h3>Review</h3>
+              <p>
+                An engineer checks fit, load and material, and asks what's
+                missing.
+              </p>
+            </div>
+            <div>
+              <span class="t-label">03</span>
+              <h3>Quote</h3>
+              <p>
+                A written price from a person. Nothing is charged until you
+                approve it.
+              </p>
+            </div>
+            <div>
+              <span class="t-label">04</span>
+              <h3>Print and check</h3>
+              <p>Critical dimensions are measured before the part ships.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="contact">
+          <div class="t-label">Contact</div>
+          <h2 style="margin-top: var(--s-4)">Got a part in mind?</h2>
+          <a class="big" href="mailto:hello@hucksprintshop.com?subject=A%20part"
+            >hello@hucksprintshop.com</a
+          >
+          <p class="t-note">
+            <span class="t-tag">Opening soon</span>&nbsp; We're setting up the
+            shop. Send a photo of your part and we'll tell you how we'd approach
+            it.
+          </p>
+        </section>
+      </main>
+
+      <footer class="t-footer">
+        <span class="t-label"
+          >© 2026 Dyhedral LLC ·
+          <a href="https://dyhedral.com/">A Dyhedral company</a></span
+        >
+        <span class="t-label">Huck is a Bernedoodle. He supervises.</span>
+      </footer>
+    </div>
+  </body>
+</html>
