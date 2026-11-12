@@ -36,6 +36,30 @@
       }
       .hero h1 {
         margin: var(--s-4) 0 var(--s-5);
+        letter-spacing: -0.025em;
+        word-spacing: 0.1em;
+        line-height: 1.1;
+      }
+      .hero h1 .t-mark {
+        margin-left: -0.14em; /* box overhangs so the text lines up with the lines above */
+        padding-top: 0.04em;
+        padding-bottom: 0.1em;
+      }
+      .t-wordmark {
+        word-spacing: 0.14em;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--s-4) var(--s-5);
+      }
+      .cta .addr {
+        font-family: var(--font-mono);
+        font-size: var(--size-1);
+        color: var(--text-2);
+        user-select: all;
+        overflow-wrap: anywhere;
       }
       .hero .t-lede {
         margin: 0 0 var(--s-6);
@@ -53,6 +77,17 @@
         justify-content: space-between;
         align-items: baseline;
         margin-bottom: var(--s-4);
+      }
+      .t-ledger {
+        max-width: 60rem;
+      }
+      .t-ledger > * {
+        grid-template-columns: 5ch minmax(0, 12rem) minmax(0, 1fr);
+      }
+      @media (max-width: 760px) {
+        .t-ledger > * {
+          grid-template-columns: 5ch minmax(0, 1fr);
+        }
       }
       .t-ledger p {
         color: var(--text-2);
@@ -128,17 +163,20 @@
               still setting up the shop and aren't taking print orders yet.
               Get in touch to hear when we open.
             </p>
-            <a
-              class="t-btn"
-              href="mailto:hello@hucksprintshop.com?subject=Huck%27s%20Print%20Shop"
-              >Get in touch</a
-            >
+            <div class="cta">
+              <a
+                class="t-btn"
+                href="mailto:hello@hucksprintshop.com?subject=Huck%27s%20Print%20Shop"
+                >Get in touch</a
+              >
+              <span class="addr">hello@hucksprintshop.com</span>
+            </div>
           </div>
           <figure class="t-figure" style="margin: 0">
             <svg
               viewBox="0 0 360 300"
               role="img"
-              aria-label="Line drawing of an L-shaped bracket with two holes, dimensioned 40.0 by 36.0 millimetres, with one hole called out as 5.2 millimetres plus or minus 0.2"
+              aria-label="Line drawing of an L-shaped bracket with two holes, dimensioned 40.0 by 36.0 millimetres, with two holes, each called out as 5.2 millimetres plus or minus 0.2"
             >
               <g
                 fill="none"
@@ -160,7 +198,7 @@
                 cx="250"
                 cy="221"
                 r="9"
-                fill="none"
+                fill="var(--signal)"
                 stroke="var(--text)"
                 stroke-width="2"
               />
@@ -183,11 +221,11 @@
                 >
                   36.0
                 </text>
-                <text x="172" y="40">Ø 5.2 ±0.2</text>
+                <text x="172" y="40">2× Ø 5.2 ±0.2</text>
               </g>
             </svg>
             <figcaption>
-              FIG. 1 / CRITICAL DIMENSIONS, MEASURED BEFORE IT SHIPS
+              FIG. 1 / CRITICAL DIMENSIONS
             </figcaption>
           </figure>
         </div>
@@ -195,7 +233,6 @@
         <section style="padding-top: 0">
           <div class="ledger-head">
             <div class="t-label">How it works</div>
-            <div class="t-label">04 steps</div>
           </div>
           <div class="t-ledger">
             <div>
