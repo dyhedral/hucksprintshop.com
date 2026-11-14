@@ -138,31 +138,31 @@
           opacity: 1;
         }
       }
+      /* Footer in the same voice as dyhedral.com's: mono capitals on a heavy rule, no second logo, no body text. */
       .site-footer {
         display: grid;
         grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
-        gap: var(--s-6) var(--s-7);
-        padding: var(--s-7) 0 var(--s-5);
+        gap: var(--s-5) var(--s-7);
+        padding: var(--s-5) 0 var(--s-5);
         border-top: var(--heavy) solid var(--rule-strong);
-      }
-      .site-footer p {
-        margin: var(--s-3) 0 0;
-        max-width: 34ch;
-        color: var(--text-2);
-        font-size: var(--size-2);
       }
       .site-footer ul {
         list-style: none;
-        margin: var(--s-3) 0 0;
+        margin: var(--s-2) 0 0;
         padding: 0;
       }
       .site-footer li {
         padding: var(--s-2) 0;
         color: var(--text-2);
-        font-size: var(--size-2);
+      }
+      .site-footer li + li {
+        margin-top: 14px; /* keeps two stacked links' padded hit areas from overlapping */
+      }
+      .site-footer .t-label.head {
+        color: var(--text);
       }
       .site-footer a {
-        color: var(--text);
+        color: var(--text-2);
         padding-block: 15px;
         overflow-wrap: anywhere;
       }
@@ -353,27 +353,23 @@
       <footer>
         <div class="site-footer">
           <div>
-            <a class="t-wordmark" href="#top">
-              <svg viewBox="0 0 32 32" aria-hidden="true">
-                <path d="M8 4v22h20" fill="none" stroke="currentColor" stroke-width="2.6" />
-                <circle cx="8" cy="11" r="3" fill="var(--signal)" stroke="currentColor" stroke-width="1.6" />
-              </svg>
-              huck's print shop
-            </a>
-            <p>Custom parts, engineer-reviewed.</p>
-          </div>
-          <div>
-            <div class="t-label">Contact</div>
+            <div class="t-label head">Huck's Print Shop</div>
             <ul>
-              <li><a href="mailto:hello@hucksprintshop.com?subject=Huck%27s%20Print%20Shop">hello@hucksprintshop.com</a></li>
-              <li>Los Gatos, California</li>
+              <li class="t-label">Custom parts, engineer-reviewed</li>
+              <li class="t-label">Los Gatos, California</li>
             </ul>
           </div>
           <div>
-            <div class="t-label">Company</div>
+            <div class="t-label head">Contact</div>
             <ul>
-              <li><a href="#how">How it works</a></li>
-              <li><a href="https://dyhedral.com/">A Dyhedral company</a></li>
+              <li class="t-label"><a href="mailto:hello@hucksprintshop.com?subject=Huck%27s%20Print%20Shop">hello@hucksprintshop.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="t-label head">Company</div>
+            <ul>
+              <li class="t-label"><a href="#how">How it works</a></li>
+              <li class="t-label"><a href="https://dyhedral.com/">A Dyhedral company</a></li>
             </ul>
           </div>
         </div>
