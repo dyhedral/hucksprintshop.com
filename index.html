@@ -106,31 +106,34 @@
         text-underline-offset: 8px;
         overflow-wrap: anywhere;
       }
-      /* The bracket draws itself once on load. Skipped for anyone who asks for reduced motion. */
+      /* The bracket draws itself once on load. The hidden starting state lives only in the keyframes, so if the
+         animation never runs the drawing is simply there. Skipped for anyone who asks for reduced motion. */
+      .hero .part {
+        stroke-dasharray: 1;
+      }
       @media (prefers-reduced-motion: no-preference) {
         .hero .part {
-          stroke-dasharray: 1;
-          stroke-dashoffset: 1;
-          animation: draw 1.4s ease-out 0.2s forwards;
-        }
-        .hero .hole,
-        .hero .dims {
-          opacity: 0;
-          animation: appear 0.5s ease-out forwards;
+          animation: draw 1.4s ease-out 0.2s both;
         }
         .hero .hole {
-          animation-delay: 1.5s;
+          animation: appear 0.5s ease-out 1.5s both;
         }
         .hero .dims {
-          animation-delay: 1.8s;
+          animation: appear 0.5s ease-out 1.8s both;
         }
       }
       @keyframes draw {
+        from {
+          stroke-dashoffset: 1;
+        }
         to {
           stroke-dashoffset: 0;
         }
       }
       @keyframes appear {
+        from {
+          opacity: 0;
+        }
         to {
           opacity: 1;
         }
@@ -357,7 +360,7 @@
               </svg>
               huck's print shop
             </a>
-            <p>Custom 3D-printed parts, reviewed by a mechanical engineer.</p>
+            <p>Custom parts, engineer-reviewed.</p>
           </div>
           <div>
             <div class="t-label">Contact</div>
