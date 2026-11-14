@@ -32,7 +32,7 @@
         grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
         gap: var(--s-7);
         align-items: end;
-        padding: var(--s-8) 0;
+        padding: var(--s-7) 0;
       }
       .hero h1 {
         margin: var(--s-4) 0 var(--s-5);
@@ -70,7 +70,7 @@
         display: block;
       }
       section {
-        padding: var(--s-8) 0;
+        padding: var(--s-7) 0;
       }
       .ledger-head {
         display: flex;
@@ -106,22 +106,90 @@
         text-underline-offset: 8px;
         overflow-wrap: anywhere;
       }
-      .contact .t-note {
-        margin-top: var(--s-6);
+      /* The bracket draws itself once on load. Skipped for anyone who asks for reduced motion. */
+      @media (prefers-reduced-motion: no-preference) {
+        .hero .part {
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+          animation: draw 1.4s ease-out 0.2s forwards;
+        }
+        .hero .hole,
+        .hero .dims {
+          opacity: 0;
+          animation: appear 0.5s ease-out forwards;
+        }
+        .hero .hole {
+          animation-delay: 1.5s;
+        }
+        .hero .dims {
+          animation-delay: 1.8s;
+        }
       }
-      .t-footer a {
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes appear {
+        to {
+          opacity: 1;
+        }
+      }
+      .site-footer {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+        gap: var(--s-6) var(--s-7);
+        padding: var(--s-7) 0 var(--s-5);
+        border-top: var(--heavy) solid var(--rule-strong);
+      }
+      .site-footer p {
+        margin: var(--s-3) 0 0;
+        max-width: 34ch;
         color: var(--text-2);
+        font-size: var(--size-2);
+      }
+      .site-footer ul {
+        list-style: none;
+        margin: var(--s-3) 0 0;
+        padding: 0;
+      }
+      .site-footer li {
+        padding: var(--s-2) 0;
+        color: var(--text-2);
+        font-size: var(--size-2);
+      }
+      .site-footer a {
+        color: var(--text);
+        padding-block: 15px;
+        overflow-wrap: anywhere;
+      }
+      .legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--s-2) var(--s-5);
+        padding: var(--s-4) 0 var(--s-7);
+        border-top: var(--hair) solid var(--rule);
+      }
+      @media (max-width: 760px) {
+        .site-footer {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          padding-top: var(--s-6);
+        }
+        .site-footer > :first-child {
+          grid-column: 1 / -1;
+        }
       }
       @media (max-width: 820px) {
         .hero {
           grid-template-columns: minmax(0, 1fr);
-          padding: var(--s-7) 0;
+          padding: var(--s-6) 0;
         }
         .hero figure {
           max-width: 340px;
         }
         section {
-          padding: var(--s-7) 0;
+          padding: var(--s-6) 0;
         }
       }
     </style>
@@ -184,9 +252,10 @@
                 stroke-width="2"
                 stroke-linejoin="round"
               >
-                <path d="M90 40h34v164h170v34H90z" />
+                <path class="part" pathLength="1" d="M90 40h34v164h170v34H90z" />
               </g>
               <circle
+                class="hole"
                 cx="107"
                 cy="88"
                 r="9"
@@ -195,6 +264,7 @@
                 stroke-width="2"
               />
               <circle
+                class="hole"
                 cx="250"
                 cy="221"
                 r="9"
@@ -202,12 +272,13 @@
                 stroke="var(--text)"
                 stroke-width="2"
               />
-              <g stroke="var(--text-2)" stroke-width="1" fill="none">
+              <g class="dims" stroke="var(--text-2)" stroke-width="1" fill="none">
                 <path d="M90 250v26M294 250v26M90 268h204" />
                 <path d="M78 40h-26M78 238h-26M60 40v198" />
                 <path d="M116 80l52-34h40" />
               </g>
               <g
+                class="dims"
                 font-family="Spline Sans Mono, monospace"
                 font-size="12"
                 fill="var(--text-2)"
@@ -230,7 +301,7 @@
           </figure>
         </div>
 
-        <section style="padding-top: 0">
+        <section id="how" style="padding-top: 0">
           <div class="ledger-head">
             <div class="t-label">How it works</div>
           </div>
@@ -273,20 +344,40 @@
           <a class="big" href="mailto:hello@hucksprintshop.com?subject=Huck%27s%20Print%20Shop"
             >hello@hucksprintshop.com</a
           >
-          <p class="t-note">
-            <span class="t-tag">Opening soon</span>&nbsp; We're setting up the
-            shop and aren't printing for customers yet. Write to us and we'll
-            reply when we open.
-          </p>
         </section>
       </main>
 
-      <footer class="t-footer">
-        <span class="t-label"
-          >© 2026 Dyhedral LLC ·
-          <a href="https://dyhedral.com/">A Dyhedral company</a></span
-        >
-        <span class="t-label">Huck is a Bernedoodle. He supervises.</span>
+      <footer>
+        <div class="site-footer">
+          <div>
+            <a class="t-wordmark" href="#top">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M8 4v22h20" fill="none" stroke="currentColor" stroke-width="2.6" />
+                <circle cx="8" cy="11" r="3" fill="var(--signal)" stroke="currentColor" stroke-width="1.6" />
+              </svg>
+              huck's print shop
+            </a>
+            <p>Custom 3D-printed parts, reviewed by a mechanical engineer.</p>
+          </div>
+          <div>
+            <div class="t-label">Contact</div>
+            <ul>
+              <li><a href="mailto:hello@hucksprintshop.com?subject=Huck%27s%20Print%20Shop">hello@hucksprintshop.com</a></li>
+              <li>Los Gatos, California</li>
+            </ul>
+          </div>
+          <div>
+            <div class="t-label">Company</div>
+            <ul>
+              <li><a href="#how">How it works</a></li>
+              <li><a href="https://dyhedral.com/">A Dyhedral company</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">
+          <span class="t-label">© 2026 Dyhedral LLC</span>
+          <span class="t-label">Huck is a Bernedoodle. He supervises.</span>
+        </div>
       </footer>
     </div>
   </body>
